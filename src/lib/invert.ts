@@ -1,0 +1,32 @@
+export default invert;
+
+// not consistency of css3 filter invert when amount > 1
+
+function invert(imagedata: ImageData, opts: amount = { amount: 0 }) {
+    let i = 0;
+    let data = imagedata.data;
+    let len = data.length;
+    let amount = +opts.amount || 0;
+    let r, g, b;
+
+    let tableValues = [+amount, 1 - amount];
+
+    for (; i < len; i += 4) {
+        r = getInterpolation(data[i] / 255, tableValues);
+        g = getInterpolation(data[i + 1] / 255, tableValues);
+        b = getInterpolation(data[i + 2] / 255, tableValues);
+
+        data[i] = r * 255;
+        data[i + 1] = g * 255;
+        data[i + 2] = b * 255;
+    }
+    return imagedata;
+}
+
+function getInterpolation(c: number, tableValues: number[]) {
+    if (c === 1) {
+        return tableValues[1];
+    }
+
+    return tableValues[0] + c * (tableValues[1] - tableValues[0]);
+}
