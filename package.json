@@ -8,7 +8,7 @@
     "build": "tsc",
     "clean": "rm -rf *.js *.d.ts src/**/*.js src/**/**/**/*.js src/**/*.d.ts src/**/**/**/*.d.ts"
   },
-  "author": "yumeng",
+  "author": "ym92",
   "license": "ISC",
   "devDependencies": {
     "ts-lint": "^4.5.1",
