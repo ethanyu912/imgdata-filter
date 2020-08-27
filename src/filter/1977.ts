@@ -1,13 +1,15 @@
 import Filter from '../lib';
 
-// filter: sepia(.5) hue - rotate(-30deg) saturate(1.4);
 export const filter1977 = (imgData: ImageData) => {
+    //sepia(.5)
     Filter.sepia(imgData, {
         amount: 0.5
     });
+    //hue-rotate(-30deg)
     Filter.hueRotate(imgData, {
-        amount: '-30deg'
+        amount: -.3
     });
+    //saturate(1.4)
     Filter.saturate(imgData, {
         amount: 1.4
     });
