@@ -1,6 +1,6 @@
 {
-  "name": "canvas-filter",
-  "version": "1.0.1-0",
+  "name": "imgdata-filter",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
