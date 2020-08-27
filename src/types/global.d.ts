@@ -1,0 +1,1 @@
+declare type amount = { amount: number | string };

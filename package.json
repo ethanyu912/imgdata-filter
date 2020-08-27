@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "clean": "rm -rf *.js *.d.ts src/**/*.js src/**/**/**/*.js src/**/*.d.ts src/**/**/**/*.d.ts"
+    "clean": "rm -rf ./dist *.js *.d.ts src/lib/*.js src/lib/*.d.ts"
   },
   "author": "ym92",
   "license": "ISC",

@@ -1,13 +1,30 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "types/*"
+            ]
+        },
+        "target": "es2015",
         "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": false
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "declaration": true,
+        "sourceMap": false,
+        "outDir": "./dist", /* Redirect output structure to the directory. */
+        "noImplicitAny": false,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true
     },
-    "outDir": "../dist",
     "include": [
-        "./src"
+        "src/**/*.ts",
+        "index.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }
