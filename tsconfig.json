@@ -6,12 +6,12 @@
                 "types/*"
             ]
         },
-        "target": "es2015",
-        "module": "commonjs",
-        "lib": [
-            "es2017",
-            "dom"
-        ],
+        "target": "es6",
+        "module": "esnext",
+        // "lib": [
+        //     "es2017",
+        //     "dom",
+        // ],
         "declaration": true,
         "sourceMap": false,
         "outDir": "./dist", /* Redirect output structure to the directory. */
