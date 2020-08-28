@@ -1,17 +1,15 @@
+
 import Filter from '../lib';
 
-export const filter1977 = (
+export const filterLofi = (
     context: CanvasRenderingContext2D,
     imgData: ImageData
 ) => {
-    Filter.sepia(imgData, {
-        amount: 0.5
-    });
-    Filter.hueRotate(imgData, {
-        amount: -.3
-    });
     Filter.saturate(imgData, {
-        amount: 1.4
+        amount: 1.1
+    });
+    Filter.contrast(imgData, {
+        amount: 1.5
     });
 
     context.putImageData(imgData, 0, 0);

@@ -1,26 +1,33 @@
 import Filter from '../lib';
 
-export const filterBrooklyn = (
+export const filterKelvin = (
     canvas: HTMLCanvasElement,
     context: CanvasRenderingContext2D,
     imgData: ImageData
 ) => {
     Filter.sepia(imgData, {
-        amount: .25
+        amount: .15
     });
     Filter.contrast(imgData, {
-        amount: 1.25
+        amount: 1.5
     });
     Filter.brightness(imgData, {
-        amount: 1.25
+        amount: 1.1
     });
     Filter.hueRotate(imgData, {
-        amount: .1
+        amount: -.1
     });
 
-    const gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'rgba(127, 187, 227, 1)');
-    gradient.addColorStop(1, 'rgba(127, 187, 227, .2)');
+    const gradient = context.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        0,
+        canvas.width / 2,
+        canvas.height / 2,
+        Math.max(canvas.width, canvas.height) / 1.25
+    );
+    gradient.addColorStop(0, 'rgba(149, 58, 0, .25)');
+    gradient.addColorStop(1, 'rgba(149, 58, 0, .55)');
 
     context.globalCompositeOperation = 'overlay';
     context.putImageData(imgData, 0, 0);

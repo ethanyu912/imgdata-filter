@@ -1,6 +1,6 @@
 import Filter from '../lib';
 
-export const filterBrooklyn = (
+export const filterLudwig = (
     canvas: HTMLCanvasElement,
     context: CanvasRenderingContext2D,
     imgData: ImageData
@@ -9,18 +9,17 @@ export const filterBrooklyn = (
         amount: .25
     });
     Filter.contrast(imgData, {
-        amount: 1.25
+        amount: 1.05
     });
     Filter.brightness(imgData, {
-        amount: 1.25
+        amount: 1.05
     });
-    Filter.hueRotate(imgData, {
-        amount: .1
+    Filter.saturate(imgData, {
+        amount: 2
     });
 
     const gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'rgba(127, 187, 227, 1)');
-    gradient.addColorStop(1, 'rgba(127, 187, 227, .2)');
+    gradient.addColorStop(0, 'rgba(125, 105, 24, .3)');
 
     context.globalCompositeOperation = 'overlay';
     context.putImageData(imgData, 0, 0);

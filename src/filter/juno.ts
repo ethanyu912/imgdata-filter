@@ -1,26 +1,25 @@
 import Filter from '../lib';
 
-export const filterBrooklyn = (
+export const filterJuno = (
     canvas: HTMLCanvasElement,
     context: CanvasRenderingContext2D,
     imgData: ImageData
 ) => {
     Filter.sepia(imgData, {
-        amount: .25
+        amount: .35
     });
     Filter.contrast(imgData, {
-        amount: 1.25
+        amount: 1.15
     });
     Filter.brightness(imgData, {
-        amount: 1.25
+        amount: 1.15
     });
-    Filter.hueRotate(imgData, {
-        amount: .1
+    Filter.saturate(imgData, {
+        amount: 1.8
     });
 
     const gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'rgba(127, 187, 227, 1)');
-    gradient.addColorStop(1, 'rgba(127, 187, 227, .2)');
+    gradient.addColorStop(0, 'rgba(127, 187, 227, .2)');
 
     context.globalCompositeOperation = 'overlay';
     context.putImageData(imgData, 0, 0);
