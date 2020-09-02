@@ -1,6 +1,6 @@
 {
   "name": "imgdata-filter",
-  "version": "1.0.2-4",
+  "version": "1.0.2-5",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -8,6 +8,14 @@
     "dev": "webpack-dev-server",
     "prepublish": "rm -rf ./dist && npm run build"
   },
+  "keywords": [
+    "image",
+    "imagedata",
+    "canvas",
+    "context2d",
+    "css3",
+    "filter"
+  ],
   "author": "ym92",
   "license": "ISC",
   "devDependencies": {
