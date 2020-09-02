@@ -1,8 +1,8 @@
 import Filter from '../lib';
 
-export const filterHudson = (
+export const filterNashville = (
     canvas: HTMLCanvasElement,
-    context: CanvasRenderingContext2D
+    context: CanvasRenderingContext2D,
 ) => {
     const gradient = context.createRadialGradient(
         canvas.width / 2,
@@ -10,12 +10,12 @@ export const filterHudson = (
         0,
         canvas.width / 2,
         canvas.height / 2,
-        Math.max(canvas.width, canvas.height) / 1.5
+        Math.max(canvas.width, canvas.height) / 1.25
     );
-    gradient.addColorStop(.25, 'rgba(25, 62, 167, 0)');
-    gradient.addColorStop(1, 'rgba(25, 62, 167, .25)');
+    gradient.addColorStop(0, 'rgba(128, 78, 15, .5)');
+    gradient.addColorStop(1, 'rgba(128, 78, 15, .65)');
 
-    context.globalCompositeOperation = 'multiply';
+    context.globalCompositeOperation = 'screen';
     context.fillStyle = gradient;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -25,13 +25,10 @@ export const filterHudson = (
         amount: .25
     });
     Filter.contrast(imgData, {
-        amount: 1.2
-    });
+        amount: 1.5
+    })
     Filter.brightness(imgData, {
-        amount: 1.2
-    });
-    Filter.saturate(imgData, {
-        amount: 1.05
+        amount: .9
     });
     Filter.hueRotate(imgData, {
         amount: -.15

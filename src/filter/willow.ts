@@ -1,19 +1,22 @@
 import Filter from '../lib';
 
-export const filterDogpatch = (
+export const filterWillow = (
     canvas: HTMLCanvasElement,
-    context: CanvasRenderingContext2D
+    context: CanvasRenderingContext2D,
 ) => {
     const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-    Filter.sepia(imgData, {
-        amount: .35
-    });
-    Filter.saturate(imgData, {
-        amount: 1.1
+    Filter.brightness(imgData, {
+        amount: 1.2
     });
     Filter.contrast(imgData, {
-        amount: 1.5
+        amount: .85
+    })
+    Filter.saturate(imgData, {
+        amount: .05
+    });
+    Filter.sepia(imgData, {
+        amount: .2
     });
 
     context.putImageData(imgData, 0, 0);

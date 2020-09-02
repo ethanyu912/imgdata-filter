@@ -8,13 +8,9 @@
         },
         "target": "es6",
         "module": "esnext",
-        // "lib": [
-        //     "es2017",
-        //     "dom",
-        // ],
         "declaration": true,
         "sourceMap": false,
-        "outDir": "./dist", /* Redirect output structure to the directory. */
+        "outDir": "./dist",
         "noImplicitAny": false,
         "esModuleInterop": true,
         "moduleResolution": "node",

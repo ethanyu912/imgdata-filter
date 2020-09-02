@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const workingPath = process.cwd();
 
 const babelLoader = {
@@ -17,20 +16,10 @@ const babelLoader = {
     }
 };
 
-const tpl = path.resolve(path.resolve(workingPath), './src/test/index.html');
-
-const htmlPlugin = new HtmlWebpackPlugin({
-    filename: `index.html`,
-    template: tpl,
-    compile: false,
-    showErrors: true,
-    cache: true
-});
-
 const webpackConf = {
-    entry: path.resolve(workingPath, 'src/test/index.js'),
+    entry: path.resolve(workingPath, 'example/index.js'),
     output: {
-        path: path.resolve(workingPath, 'src/test'),
+        path: path.resolve(workingPath, 'example'),
         filename: 'bundle.js'
     },
     mode: 'development',
@@ -45,7 +34,7 @@ const webpackConf = {
         http2: 'empty',
         net: 'empty',
         tls: 'empty',
-        child_process: 'empty' // eslint-disable-line
+        child_process: 'empty'
     },
     module: {
         strictExportPresence: false,
@@ -63,7 +52,7 @@ const webpackConf = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'src/test'),
+        contentBase: path.join(__dirname, 'example'),
         host: '0.0.0.0',
         hot: true,
         port: 8080,
@@ -80,8 +69,7 @@ const webpackConf = {
             'node_modules'
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.less', '.css'],
-    },
-    // plugins: [htmlPlugin]
+    }
 };
 
 module.exports = webpackConf;

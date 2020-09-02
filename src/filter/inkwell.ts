@@ -2,10 +2,11 @@
 import Filter from '../lib';
 
 export const filterInkwell = (
-    context: CanvasRenderingContext2D,
-    imgData: ImageData
+    canvas: HTMLCanvasElement,
+    context: CanvasRenderingContext2D
 ) => {
-    console.log(context)
+    const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+
     Filter.brightness(imgData, {
         amount: 1.25
     });

@@ -4,11 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "webpack": "webpack-dev-server",
-    "clean": "rm -rf ./dist",
-    "prepublish": "npm run clean && npm run build"
+    "dev": "webpack-dev-server",
+    "prepublish": "rm -rf ./dist && npm run build"
   },
   "author": "ym92",
   "license": "ISC",
@@ -19,7 +17,6 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "html-webpack-plugin": "^4.3.0",
     "ts-lint": "^4.5.1",
     "ts-loader": "^8.0.3",
     "tslint-config-airbnb": "^5.11.2",

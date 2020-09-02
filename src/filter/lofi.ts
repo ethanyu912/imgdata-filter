@@ -2,9 +2,11 @@
 import Filter from '../lib';
 
 export const filterLofi = (
-    context: CanvasRenderingContext2D,
-    imgData: ImageData
+    canvas: HTMLCanvasElement,
+    context: CanvasRenderingContext2D
 ) => {
+    const imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+
     Filter.saturate(imgData, {
         amount: 1.1
     });
