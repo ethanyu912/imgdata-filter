@@ -27,7 +27,7 @@ npm install imgdata-filter
 
 #### Example
 ```html
-    // html
+    <!-- html -->
     <img id='image' src=''>
 
     <canvas id='1977'></canvas>
@@ -69,4 +69,8 @@ npm install imgdata-filter
 
         // ...
     }
+```
+### Development
+```shell
+npm run dev
 ```
