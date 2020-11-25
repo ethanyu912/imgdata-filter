@@ -10,7 +10,6 @@ function blur(imagedata: ImageData, opts = { amount: 0 }) {
     let dotIndex;
     let gaussianDot;
 
-
     if (!amount) {
         return imagedata;
     }
@@ -103,5 +102,5 @@ function gaussian(x: number, y: number, deviation: number) {
         - (x * x + y * y) / (2 * deviation * deviation)
     ) /
         (2 * Math.PI * deviation * deviation)
-    return ret
+    return ret;
 }

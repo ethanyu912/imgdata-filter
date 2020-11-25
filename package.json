@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "webpack-dev-server",
-    "prepublish": "rm -rf ./dist && npm run build"
+    "build-example": "webpack",
+    "prepublish": "rm -rf ./dist && npm run build",
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "image",
